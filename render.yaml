@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: dedsec-all-in-one
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn bot:app_flask
+    envVars:
+      - key: BOT_TOKEN
+        value: 8687335090:AAHnRuMSfkA1qyP6VNhdYeqAEJlQjWbXZE8
+      - key: WEBHOOK_URL
+        value: https://nox-3.onrender.com
+      - key: PORT
+        value: 5000
